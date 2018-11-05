@@ -2,7 +2,7 @@
 
 import json
 
-map_name = "./maps/test_1.json"  # actual map path here
+map_name = "./maps/test_4.json"  # actual map path here
 
 # reading JSON file with testing map - one layer, no rotation
 def get_data(map_name):
@@ -16,17 +16,24 @@ def get_coordinates(data):
     map_field_height = data['layers'][0]['height']
     map_field_width = data['layers'][0]['width']
 
-    # creates map - list of x, y vectors 
+    # creates map - list of x, y vectors
     # transformation with reversed is required as the json tiles are in an opposite direction
     coordinates = []
     for y in reversed(range(map_field_height)):
-        for x in range(map_field_width):       
+        for x in range(map_field_width):
             coordinates.append((x, y))
     return coordinates
 
 # getting the list of json tiles
 def get_tiles(data):
-    tilelist = data["layers"][0]["data"]
+    tilelist_number = data["layers"][0]["data"]
+    tilelist = []
+    rotation_dict ={0:0, 10:90, 12:180, 6:270}
+    for data in tilelist_number:
+        real_tile = data & 0xFFFFFF
+        rotation_index = data>>(4*7)
+        rotation = rotation_dict[rotation_index]
+        tilelist.append((real_tile, rotation))
     return tilelist
 
 # getting the board state - creates zip and transforms it to a dictionary of keys = (x, y) and values = [tiles]
