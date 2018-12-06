@@ -28,9 +28,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="6.1021106"
-     inkscape:cx="69.802888"
-     inkscape:cy="16.193614"
+     inkscape:zoom="9.4034478"
+     inkscape:cx="47.694076"
+     inkscape:cy="20.223875"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -70,32 +70,33 @@
        height="16.933332"
        x="-227.54166"
        y="59.630951" />
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:0.361;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:21.1607151;stroke-opacity:1;paint-order:markers stroke fill"
+       id="rect5446"
+       width="12.7"
+       height="12.7"
+       x="52.916676"
+       y="96.974983" />
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:0.38755864;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:21.1607151;stroke-opacity:1;paint-order:markers stroke fill"
+       id="rect1552"
+       width="8.4094486"
+       height="8.9191055"
+       x="54.536366"
+       y="102.38227" />
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:0.28565359;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:21.1607151;stroke-opacity:1;paint-order:markers stroke fill"
+       id="rect1729"
+       width="12.964585"
+       height="12.964587"
+       x="52.784374"
+       y="96.760002" />
     <g
-       id="g2928"
-       inkscape:export-filename="/home/terezievahalova/dev/roboprojekt/interface/png/token.png"
+       id="g10993"
+       inkscape:export-filename="/home/terezievahalova/dev/roboprojekt_muj/interface/png/token.png"
        inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96">
-      <rect
-         y="96.974983"
-         x="52.916676"
-         height="12.7"
-         width="12.7"
-         id="rect5446"
-         style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:0.361;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:21.1607151;stroke-opacity:1;paint-order:markers stroke fill" />
-      <rect
-         y="102.38227"
-         x="54.536366"
-         height="8.9191055"
-         width="8.4094486"
-         id="rect1552"
-         style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:0.38755864;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:21.1607151;stroke-opacity:1;paint-order:markers stroke fill" />
-      <rect
-         y="96.760002"
-         x="52.784374"
-         height="12.964587"
-         width="12.964585"
-         id="rect1729"
-         style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:0.28565359;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:21.1607151;stroke-opacity:1;paint-order:markers stroke fill" />
+       inkscape:export-ydpi="96"
+       transform="matrix(1.0013604,0,0,1.0013595,-0.07235739,-0.14862473)">
       <path
          sodipodi:nodetypes="ccccc"
          inkscape:connector-curvature="0"
