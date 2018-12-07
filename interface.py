@@ -12,13 +12,14 @@ class InterfaceData(Enum):
     indicator = (688, 864), 1, 0, 'interface/png/green.png'
     flags = (332, 928), 3, 48, 'img/squares/png/flag_{}.png'
     tokens = (676, 768), 4, -70, 'interface/png/token.png'
+    power_down = (186, 854), 1, 0, 'interface/png/power.png'
 
     def __init__(self, first_coordinates, elements_count, space, path):
         self.first_coordinates = first_coordinates
         self.elements_count = elements_count
         self.space = space
         self.path = path
-#data = [coordinate of first element, number of elements, space between elements, path]
+
 
 def create_sprites():
     sprites = []

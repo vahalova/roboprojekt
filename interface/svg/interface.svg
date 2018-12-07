@@ -17,7 +17,7 @@
    id="svg8"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="interface.svg"
-   inkscape:export-filename="/home/terezievahalova/dev/roboprojekt/interface/png/interface2.png"
+   inkscape:export-filename="/home/terezievahalova/dev/roboprojekt/interface/png/interface.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96">
   <defs
@@ -408,17 +408,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.0728986"
-     inkscape:cx="570.64443"
-     inkscape:cy="745.59098"
+     inkscape:zoom="1.0958813"
+     inkscape:cx="250.64402"
+     inkscape:cy="728.2811"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer4"
+     inkscape:current-layer="g6650"
      showgrid="true"
      gridtolerance="10"
-     inkscape:window-width="1920"
-     inkscape:window-height="1016"
-     inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:window-width="1280"
+     inkscape:window-height="987"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      showguides="true">
     <inkscape:grid
@@ -1194,7 +1194,10 @@
          id="rect8543-1"
          d="M 229.48633,40 192,77.486328 V 130.51367 L 229.48633,168 h 53.01953 L 320,130.50586 V 77.494141 L 282.50586,40 Z"
          style="display:inline;opacity:1;fill:#c0c0c0;fill-opacity:1;stroke:none;stroke-width:11.41554451;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:21.1607151;stroke-opacity:1;paint-order:markers stroke fill"
-         inkscape:connector-curvature="0" />
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="/home/terezievahalova/dev/roboprojekt/interface/png/interface.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
       <text
          id="text6615"
          y="25.370472"
