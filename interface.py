@@ -6,18 +6,21 @@ window = pyglet.window.Window(768, 1024)
 press_key = set()
 press_key_card = set()
 
-#data = [coordinate of first element, number of elements, space between elements, path]
+robot_injury = 3 #provisional value
 
+
+
+#data = [coordinate of first element, number of elements, space between elements, path]
 class InterfaceData(Enum):
     interface = (0, 0),1, 0,'interface/png/interface.png'
     lives = (354, 864), 3, 46, 'interface/png/life.png'
     indicator = (688, 864), 1, 0, 'interface/png/green.png'
     flags = (332, 928), 8, 48, 'img/squares/png/flag_{}.png'
-    tokens = (676, 768), 3, -70, 'interface/png/token.png'
+    tokens = (676, 768), 10, -70, 'interface/png/token.png'
     power_down = (186, 854), 1, 0, 'interface/png/power.png'
     cards_1 = (47, 384), 5, 144, 'interface/png/card_bg.png'
     cards_2 = (120, 224), 4, 144, 'interface/png/card_bg.png'
-    cards_3 = (47, 576), 0, 144, 'interface/png/card_bg.png'
+    cards_3 = (47, 576), 5, 144, 'interface/png/card_bg.png'
 
 
     def __init__(self, first_coordinates, elements_count, space, path):
@@ -48,34 +51,35 @@ def draw_interface(sprites):
         tile_sprite.draw()
 
 def get_cards():
+    card_count = InterfaceData.cards_1.elements_count+InterfaceData.cards_2.elements_count-robot_injury
     path = 'interface/png/card_bg.png'
     InterfaceData.cards_1.path = path
     InterfaceData.cards_2.path = path
-    sprites1 = (get_element(InterfaceData.cards_1))
-    sprites1.extend(get_element(InterfaceData.cards_2))
-    card_count = InterfaceData.cards_1.elements_count+InterfaceData.cards_2.elements_count-(InterfaceData.tokens.elements_count)
-    draw_interface(sprites1[0:card_count])
+
+    sprites_1_row = []
+    sprites_1_row.extend(get_element(InterfaceData.cards_1))
+    sprites_1_row.extend(get_element(InterfaceData.cards_2))
+    draw_interface(sprites_1_row[0:card_count])
+
+
     path = 'interface/png/card_stop.png'
     InterfaceData.cards_1.path = path
     InterfaceData.cards_2.path = path
-    sprites2 = (get_element(InterfaceData.cards_1))
-    sprites2.extend(get_element(InterfaceData.cards_2))
-    draw_interface(sprites2[card_count:])
+
+    sprites_2_row = []
+    sprites_2_row.extend(get_element(InterfaceData.cards_1))
+    sprites_2_row.extend(get_element(InterfaceData.cards_2))
+    draw_interface(sprites_2_row[card_count:])
 
 
 @window.event
 def on_draw():
     window.clear()
     draw_interface(create_sprites(InterfaceData.interface)) # background
-    draw_interface(create_sprites(InterfaceData.tokens))
+    draw_interface(get_element(InterfaceData.tokens)[:robot_injury])
     get_cards()
 
 
-    if ('1', 1) in press_key_card:
-
-        InterfaceData.cards_3.elements_count +=1
-        print(InterfaceData.cards_3.elements_count)
-        draw_interface(get_element(InterfaceData.cards_3))
 
     if ('power', 1) in press_key:
         draw_interface(get_element(InterfaceData.power_down))
@@ -93,22 +97,6 @@ def on_key_press(symbol, modifiers):
 
     if symbol == key._1:
         press_key_card.add(('1', 1))
-    if symbol == key._2:
-        press_key_card.add(('2', 2))
-    if symbol == key._3:
-        press_key_card.add(('3', 3))
-    if symbol == key._4:
-        press_key_card.add(('4', 4))
-    if symbol == key._5:
-        press_key_card.add(('5', 5))
-    if symbol == key._6:
-        press_key_card.add(('6', 6))
-    if symbol == key._7:
-        press_key_card.add(('7', 7))
-    if symbol == key._8:
-        press_key_card.add(('8', 8))
-    if symbol == key._9:
-        press_key_card.add(('9', 9))
 
     return press_key, press_key_card
 
