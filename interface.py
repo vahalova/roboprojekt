@@ -1,77 +1,51 @@
 from random import shuffle
-from backend import Robot,Direction
+from backend import Robot, Direction
 
-life = Robot(Direction.N,"./img/robots_map/png/MintBot.png" , (4,4))
-print(life.lifecount)
+robot_data = Robot(Direction.N, "./img/robots/png/MintBot_front.png", (4, 4))
+
+
 
 class InterfaceState:
-    def __init__(self, cards, injury, life, power_down, flags):
+    def __init__(self, cards, power_down, robot_data):
         self.cards = cards
-        self.injury = injury
-        self.life = life
         self.power_down = power_down
-        self.flags = flags
-
-
+        self.robot_data = robot_data
 
     def __repr__(self):
-        return "<InterfaceState {} Injury:{}, Life:{} Power Down:{} Flags:{}>".format(self.cards, self.injury, self.life, self.power_down, self.flags )
+        return "<InterfaceState Cards: {}, Power Down: {}, Robot: {}>".format(self.cards, self.power_down, self.robot_data)
 
 
-def interface_state():
-    deal_cards_list = deal_cards()
-    injury = get_robot_injury()
-    my_life = get_robot_life()
-    power_down = get_power_down()
-    flags = get_flags()
-
-    return deal_cards_list, injury, my_life, power_down, flags
-
-def get_deck_of_cards():
-    cards_type = {'u_turn': [6, 50, 56],
-        'back_up': [5, 250, 255],
-        'left': [18, 100, 118],
-        'right': [18, 200, 218],
-        'move1': [17, 300, 317],
-        'move2': [12, 400, 412],
-        'move3': [6, 500, 506]
-    }
-    deck_of_cards = []
-    for name, number in cards_type.items():
+def get_card_pack():
+    cards_types = {'u_turn': [6, 50, 56],
+                'back_up': [5, 250, 255],
+                'left': [18, 100, 118],
+                'right': [18, 200, 218],
+                'move1': [17, 300, 317],
+                'move2': [12, 400, 412],
+                'move3': [6, 500, 506]
+                }
+    card_pack = []
+    for name, number in cards_types.items():
         for i in range(number[1],number[2]):
-            deck_of_cards.append((name, i))
-    shuffle(deck_of_cards)
-    return(deck_of_cards)
+            card_pack.append((name, i))
+    shuffle(card_pack)
+    return(card_pack)
 
 
 def deal_cards():
-    deck_of_cards = get_deck_of_cards()
+    card_pack = get_card_pack()
     deal_cards_list = {}
-    for i in range(9-get_robot_injury()):
-        deal_cards_list[i+1] =  deck_of_cards.pop()
+    for i in range(9-robot_data.injurycount):
+        deal_cards_list[i+1] =  card_pack.pop()
     return deal_cards_list
 
 
-def get_robot_injury():
-    injury = 0#provisional value
-    return injury
-
-def get_robot_life():
-    my_life = 3 #provisional value
-    return my_life
-
 def get_power_down():
-    return False #provisional value
+    return False
 
-def get_flags():
-    flags = 0 #provisional value
-    return flags
 
-def get_start_interface_state():
+def get_interface_state():
     cards = deal_cards()
-    injury = get_robot_injury()
-    life = get_robot_life()
     power_down = get_power_down()
-    flags = get_flags()
-    interface_state = InterfaceState(cards, injury, life, power_down, flags )
+    interface_state = InterfaceState(cards, power_down, robot_data)
     return interface_state
